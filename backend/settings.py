@@ -26,10 +26,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-produc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.getos.environ.get(
-    'ALLOWED_HOSTS',
-    'localhost,127.0.0.1,procuretopay-backend-production.up.railway.app'
-).split(',')
+# SECURITY WARNING: define the correct hosts in production!
+ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -194,6 +193,7 @@ SIMPLE_JWT = {
 # CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://procure-to-pay-project.vercel.app",
     "http://127.0.0.1:3000",
     "http://localhost:5173",  # Vite dev server
 ]
